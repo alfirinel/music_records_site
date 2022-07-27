@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->string('twitter');
             $table->string('instagram');
             $table->string('facebook');
+            $table->string('img_profile')->nullable();
             $table->timestamps();
         });
     }
