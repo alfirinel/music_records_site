@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::auth();
+Route::get('/', 'HomeController@index');
+
+Route::get('/artists', 'HomeController@artists');
+Route::get('/news', 'HomeController@news');
+
+
+
+Route::group(['middleware'=>['auth']], function (){
+    Route::get('/user/profile/close-account', 'User\ProfileController@delete');
+    Route::resource('/user/profile', 'User\ProfileController', ['except'=>['show', 'store', 'create']]);
 });
+
