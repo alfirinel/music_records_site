@@ -65,25 +65,20 @@ class TrackController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Requests\TrackRequest $request
+     * @param Request $request
      * @param Track $track
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
+
     public function update(Request $request, Track $track)
     {
         $this->validate($request, [
             'name' => 'required|max:255',
         ]);
 
-
-//        dd($track);
-//        $request->user()->albums()->$track->name = $request->name;
-//        $track->save();
-        $request->user()->albums()->$track->update([
-            'name'=> $request->name,
-        ]);
-        dd();
-
+//        dd($track->name,$request->name);
+        $track->name = $request->name;
+        $track->save();
         return redirect()->route('album.show', $track);
     }
 
