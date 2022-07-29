@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function artists()
     {
         $users = User::all();
-        return view('artists',['users' => $users]);
+        return view('artists.artists',['users' => $users]);
     }
 
     public function news()

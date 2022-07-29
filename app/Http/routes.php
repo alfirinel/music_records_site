@@ -14,7 +14,7 @@
 Route::auth();
 Route::get('/', 'HomeController@index');
 
-Route::get('/artists', 'HomeController@artists');
+
 Route::get('/news', 'HomeController@news');
 
 
@@ -24,3 +24,4 @@ Route::group(['middleware'=>['auth']], function (){
     Route::resource('/user/profile', 'User\ProfileController', ['except'=>['show', 'store', 'create']]);
 });
 
+Route::resource('/artists', 'ArtistController', ['except'=>['destroy', 'store', 'create', 'update', 'edit']]);
