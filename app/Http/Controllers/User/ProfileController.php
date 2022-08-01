@@ -51,6 +51,8 @@ class ProfileController extends Controller
         $photo = Auth::user();
         $photo->img_path = $filename;
         $photo->save();
+
+        return redirect(route('user.profile.index'));
     }
 
     /**

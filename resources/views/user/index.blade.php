@@ -18,6 +18,9 @@
         </div>
             <div class="profile">
                 <h2>Hello, {{ Auth::user()->first_name }}</h2>
+                @if (!$user->img_path == 0)
+                    <img src='/images/profilePhoto/{{$user->img_path}}' class="profilePhoto"/>
+                @endif
                     <form action="{{ route('user.profile.update', $user->id) }}" method="POST" >
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}

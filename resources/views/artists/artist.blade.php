@@ -3,8 +3,10 @@
 @section('content')
     <div class="overlay">
         <div class="artists-con">
+            @if (!$users->img_path == 0)
+            <img src='/images/profilePhoto/{{$users->img_path}}' class="profilePhoto"/>
+            @endif
             <div class="con">
-                <img src='/images/profilePhoto/{{$users->img_path}}'/>
                 <h2>{{ $users->first_name }} {{ $users->last_name }}</h2>
                 <div>
                     @if (!$users->website == 0)
