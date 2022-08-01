@@ -4,6 +4,7 @@
     <div class="overlay">
         <div class="artists-con">
             <div class="con">
+                <img src='/images/profilePhoto/{{$users->img_path}}'/>
                 <h2>{{ $users->first_name }} {{ $users->last_name }}</h2>
                 <div>
                     @if (!$users->website == 0)

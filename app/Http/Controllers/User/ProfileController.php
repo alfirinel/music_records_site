@@ -36,21 +36,27 @@ class ProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $image_name = $request->file('file')->getClientOriginalName();
-        $request->file('file')->move(base_path().'/public/images/profilePhoto', $image_name);
-        $image['img_path'] = $image_name;
-        Auth::user()->create($image);
+        $image = $request->file('file')->getClientOriginalName();
+
+        $filename = time().$image;
+        if($request->hasFile('file')){
+            $file = $request->file('file');
+            $file->move(base_path() . '/public/images/profilePhoto', $filename);
+        }
+        $photo = Auth::user();
+        $photo->img_path = $filename;
+        $photo->save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -61,7 +67,7 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  User $user
+     * @param User $user
      * @return \Illuminate\Http\Response
      */
     public function edit(User $profile)
@@ -72,18 +78,18 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  User $user
+     * @param \Illuminate\Http\Request $request
+     * @param User $user
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $profile)
     {
         $this->validate($request, [
-            'profile'=>'min:5',
-            'website'=>'min:5',
-            'twitter'=>'min:5',
-            'instagram'=>'min:5',
-            'facebook'=>'min:5',
+            'profile' => 'min:5',
+            'website' => 'min:5',
+            'twitter' => 'min:5',
+            'instagram' => 'min:5',
+            'facebook' => 'min:5',
 
         ]);
 
@@ -100,7 +106,7 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $profile)
@@ -117,6 +123,6 @@ class ProfileController extends Controller
 
     public function imageUpload(Request $request)
     {
-        
+
     }
 }
