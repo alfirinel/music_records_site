@@ -21,7 +21,7 @@ Route::get('/news', 'HomeController@news');
 
 Route::group(['middleware'=>['auth']], function (){
     Route::get('/user/profile/close-account', 'User\ProfileController@delete');
-    Route::resource('/user/profile', 'User\ProfileController', ['except'=>['show', 'store', 'create']]);
+    Route::resource('/user/profile', 'User\ProfileController', ['except'=>['show', 'create']]);
 });
 
 Route::resource('/artists', 'ArtistController', ['except'=>['destroy', 'store', 'create', 'update', 'edit']]);

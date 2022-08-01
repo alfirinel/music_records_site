@@ -23,6 +23,7 @@ class User extends Authenticatable
         'twitter',
         'instagram',
         'facebook',
+        'img_path',
     ];
 
     /**

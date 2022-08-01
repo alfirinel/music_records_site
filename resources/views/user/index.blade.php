@@ -45,12 +45,16 @@
                                     <label for="facebook">Facebook</label>
                                     <input class="profile-input" type="text" id="facebook" name="facebook" value="{{ $user->facebook }}">
                                 </div>
-
-
                                 <button> Save </button>
                             </div>
                         </div>
                     </form>
+
+                <form action="{{route('user.profile.store')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <input type="file" name="file">
+                    <input type="submit">
+                </form>
             </div>
     </div>
 @endsection

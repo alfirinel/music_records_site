@@ -41,7 +41,10 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $image_name = $request->file('file')->getClientOriginalName();
+        $request->file('file')->move(base_path().'/public/images/profilePhoto', $image_name);
+        $image['img_path'] = $image_name;
+        Auth::user()->create($image);
     }
 
     /**
