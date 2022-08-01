@@ -19,8 +19,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('user.index', ['users' => $users]);
+        $user = Auth::user();
+        return view('user.index', ['user' => $user]);
     }
 
     /**
@@ -110,5 +110,10 @@ class ProfileController extends Controller
     {
         $users = User::all();
         return view('user.delete', ['users' => $users]);
+    }
+
+    public function imageUpload(Request $request)
+    {
+        
     }
 }

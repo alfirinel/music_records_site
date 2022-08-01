@@ -6,16 +6,24 @@
             <div class="con">
                 <h2>{{ $users->first_name }} {{ $users->last_name }}</h2>
                 <div>
-                    <a href="{{$users->website}}">Website</a>
-                    <a href=" {{$users->twitter}}">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="{{$users->instagram}}">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                    <a href="{{$users->facebook}}">
-                        <i class="fa fa-facebook-square"></i>
-                    </a>
+                    @if (!$users->website == 0)
+                        <a href="{{$users->website}}">Website</a>
+                    @endif
+                    @if (!$users->twitter == 0)
+                        <a href=" {{$users->twitter}}">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    @endif
+                    @if (!$users->instagram == 0)
+                        <a href=" {{$users->instagram}}">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    @endif
+                    @if (!$users->facebook == 0)
+                        <a href=" {{$users->facebook}}">
+                            <i class="fa fa-facebook-square"></i>
+                        </a>
+                    @endif
                 </div>
             </div>
             <p>{{$users->profile}}</p>

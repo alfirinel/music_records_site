@@ -6,7 +6,7 @@
             <div class="artists-con">
                 @foreach ($users as $user)
                     <div class="con">
-                        <a href="{{route('artists.show', $user->id)}}">{{ $user->id }} {{ $user->first_name }} {{$user->last_name}}/</a>
+                        <a href="{{route('artists.show', $user->id)}}">{{ $user->first_name }} {{$user->last_name}}/</a>
                     </div>
                 @endforeach
             </div>

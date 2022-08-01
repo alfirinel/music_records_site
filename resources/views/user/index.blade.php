@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @if (count($users) > 0)
-        @foreach ($users as $user)
-        @endforeach
-    @endif
     <div class="container">
         <div class="edit-form">
             <ul>
@@ -49,6 +45,8 @@
                                     <label for="facebook">Facebook</label>
                                     <input class="profile-input" type="text" id="facebook" name="facebook" value="{{ $user->facebook }}">
                                 </div>
+
+
                                 <button> Save </button>
                             </div>
                         </div>
