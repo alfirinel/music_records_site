@@ -61,6 +61,7 @@
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fa fa-btn fa-music"></i> Create
                                     </button>
+                                    <button type="button" class="btn btn-default"><a href="{{ url()->previous() }}">Cancel</a> </button>
                                 </div>
                             </div>
                         </form>

@@ -3,13 +3,9 @@
 namespace App\Http\Controllers\Audio;
 
 use App\Model\Album;
-use App\Model\Track;
-use App\User;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Pagination\Paginator;
 
 
 class AlbumController extends Controller
@@ -27,7 +23,7 @@ class AlbumController extends Controller
     public function index()
     {
         $albums = Album::paginate(10);
-//        dd(\Auth::user()->albums);
+        \Auth::user()->albums;
         return view('audio.album.index', compact('albums'));
     }
 
@@ -58,7 +54,7 @@ class AlbumController extends Controller
                 ->move("images\cover\\".date('Y-m-d'), $name);
 
         $album = $request->user()->albums()->create([
-            'name'=> (trim(strtolower($request['name']))),
+            'name'=> (trim($request['name'])),
             'img_path'=>$path->getPathname(),
             'date_release'=>$request['date'],
         ]);
@@ -94,13 +90,23 @@ class AlbumController extends Controller
      * @param Album $album
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\FormRequest $request, Album $album)
+    public function update(Request $request, Album $album)
     {
-
-        dd('trololo');
-        $data = $request->all();
-//        dd($data, $album);
-        $album->update($data);
+        if($request->hasFile('img_path')){
+            $name = $request->file('img_path')->getClientOriginalName();
+            $path = $request->file('img_path')->move("images\cover\\".date('Y-m-d'), $name);
+        };
+        $album->name = $request->name;
+        $album->img_path = $path->getPathname();
+        $album->date_release = $request->date_release;
+        $album->save();
+//        $album = $request->user()->albums()->update([
+//            'name'=> (trim($request['name'])),
+//            'img_path'=>$path->getPathname(),
+//            'date_release'=>$request['date_release'],
+//        ]);
+//        $album->save();
+//        dd($album);
         return redirect()->route('album.show', $album);
     }
 

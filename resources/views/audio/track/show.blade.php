@@ -38,6 +38,7 @@
                                         <button type="submit" id="delete-task-{{ $track->id }}" class="btn btn-danger">
                                             <i class="fa fa-btn fa-trash"></i>Удалить
                                         </button>
+                                        <button type="button" class="btn btn-default"><a href="{{ url()->previous() }}">Cancel</a> </button>
                                     </form>
                                 </td>
                             </tr>

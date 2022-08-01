@@ -34,9 +34,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <a href="{{ route('album.show', $track) }}">
-                                <button type="reset" class="btn btn-light">Cancel</button>
-                            </a>
+                            <button type="button" class="btn btn-default"><a href="{{ url()->previous() }}">Cancel</a> </button>
                         </form>
                     </div>
                 </div>

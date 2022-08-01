@@ -25,7 +25,6 @@ class TrackRequest extends Request
     {
         return [
             "name" => "nullable|string|max:50",
-//            "audio" => 'required|mimes:audio/mpeg|max:25000',
             "audio" => 'required|mimetypes:audio/mpeg|max:25000',
 
         ];

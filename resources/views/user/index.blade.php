@@ -12,7 +12,7 @@
                         <a href="{{route('user.profile.index')}}"><button type="submit" class="btn btn-success">Preferences</button></a>
                 </li>
                 <li>
-                    <button type="submit" class="btn btn-success">Add an album</button>
+                    <a href="{{route('album.create')}}"><button type="submit" class="btn btn-success">Create a new album </button></a>
                 </li>
                 <li>
                     <a href="{{url('user/profile/close-account')}}"><button type="submit" class="btn btn-success">Close Account</button></a>
