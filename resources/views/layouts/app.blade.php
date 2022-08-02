@@ -15,8 +15,7 @@
         <div class=nav-right">
             <a class="active" href="{{url('/')}}">Releases</a>
             <a href="{{ url('artists') }}">Artists</a>
-            <a href="{{ url('news') }}">News</a>
-            <a href="{{ route('user.profile.index') }}">Personal account</a>
+            <a href="{{ route('user.profile.index') }}">Log In</a>
         </div>
     </div>
         @yield('content')
@@ -26,11 +25,9 @@
         <div class="nav-right">
             <a class="active" href="{{url('/')}}">Releases</a>
             <a href="{{ url('artists') }}">Artists</a>
-            <a href="{{ url('news') }}">News</a>
             <a href="{{ route('user.profile.index')}}">Personal account</a>
             <a href="{{ url('/logout') }}">Logout</a>
         </div>
     </div>
-
 @yield('content')
 @endif

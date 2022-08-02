@@ -7,10 +7,9 @@
 
                         <!-- Заголовок таблицы -->
                         <thead>
-                        <th>#</th>
-                        <th>&nbsp;</th>
+                        <th></th>
+                        <th></th>
                         </thead>
-
                         <!-- Тело таблицы -->
                         <tbody>
                         @foreach ($tracks as $track)

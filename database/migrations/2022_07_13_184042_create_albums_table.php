@@ -16,7 +16,6 @@ class CreateAlbumsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('img_path');
-//            $table->string('genre');
             $table->integer('user_id')
                 ->unsigned()
                 ->index();

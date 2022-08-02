@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
 
 
 class AlbumController extends Controller
@@ -26,9 +27,9 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::paginate(10);
-//        dd(\Auth::user()->albums);
-        return view('audio.album.index', compact('albums'));
+        $albums = Album::paginate(3);
+        $user = Auth::user();
+        return view('audio.album.index', ['user' => $user], compact('albums'));
     }
 
     /**
@@ -38,7 +39,8 @@ class AlbumController extends Controller
      */
     public function create()
     {
-        return view('audio.album.create');
+        $user = Auth::user();
+        return view('audio.album.create', ['user' => $user]);
     }
 
     /**
@@ -74,8 +76,9 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
+        $user = Auth::user();
         $tracks = $album->tracks;
-        return view('audio.album.show', compact('album', 'tracks'));
+        return view('audio.album.show', ['user' => $user], compact('album', 'tracks'));
     }
 
     /**
@@ -84,7 +87,8 @@ class AlbumController extends Controller
      */
     public function edit(Album $album)
     {
-        return view('audio.album.edit', compact('album'));
+        $user = Auth::user();
+        return view('audio.album.edit', ['user' => $user], compact('album'));
     }
 
     /**
@@ -96,12 +100,10 @@ class AlbumController extends Controller
      */
     public function update(Requests\FormRequest $request, Album $album)
     {
-
-        dd('trololo');
+        $user = Auth::user();
         $data = $request->all();
-//        dd($data, $album);
         $album->update($data);
-        return redirect()->route('album.show', $album);
+        return redirect()->route('album.index', ['user' => $user], $album);
     }
 
     /**

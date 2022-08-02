@@ -34,19 +34,14 @@ class TrackController extends Controller
     {
         $album = Album::findOrFail($request->input('id'));
         $this->authorize('destroy', $album);
-              //  /album/{album}/track
-    //TODO policy current has current album
-        //$album->tracks()->create
         $name = $request->file('audio')->getClientOriginalName();
         $path = $request->file('audio')->move("audio".DIRECTORY_SEPARATOR.date('Y-m-d'), $name);
         $name = pathinfo($name, PATHINFO_FILENAME);
-
 
         $album->tracks()->create([
             'name'=> (trim($name)),
             'path'=>$path,
         ]);
-
         return redirect()->route('album.show', $album);
     }
 
