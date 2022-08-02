@@ -9,14 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Laravel</title>
 </head>
-<form action="{{url('/user/profile/language')}}" method="post">
-    <select name="locale">
-        <option value="en">English</option>
-        <option value="ru">Русский</option>
-    </select>
-    {{csrf_field()}}
-    <input type="submit" value="Submit">
-</form>
 @if (Auth::guest())
     <div class="nav">
         <a href="{{url('/')}}" class="logo"><img src="/images/logo.png" alt="logo" class="logo"/></a>

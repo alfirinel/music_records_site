@@ -9,7 +9,7 @@
 
                    <img class="card-img-bottom" src="{{ $album->img_path }}" alt="Card image" style="width:100%">
                    <h4 class="card-title">{{ $album->name }}</h4>
-                   <p class="card-text">{{ $album->date_release }}</p>
+                   <p class="card-text">Data release: {{ $album->date_release }}</p>
                    <a href="{{ route('album.show', $album) }}" class="btn btn-primary">See album</a>
                </div>
 

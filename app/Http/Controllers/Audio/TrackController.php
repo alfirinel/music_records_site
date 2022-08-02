@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
 class TrackController extends Controller
 {
@@ -55,8 +54,7 @@ class TrackController extends Controller
      */
     public function edit(Track $track)
     {
-        $user = Auth::user();
-        return view('audio.track.edit', ['user' => $user], compact('track'));
+        return view('audio.track.edit', compact('track'));
     }
 
     /**
