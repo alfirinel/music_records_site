@@ -15,11 +15,12 @@ class CreateAlbumsTable extends Migration
         Schema::create('albums', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('cover');
+            $table->string('img_path');
+//            $table->string('genre');
             $table->integer('user_id')
                 ->unsigned()
                 ->index();
-            $table->integer('year');
+            $table->timestamp('date_release');
             $table->timestamps();
 
             $table->foreign('user_id')

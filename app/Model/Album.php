@@ -9,15 +9,15 @@ class Album extends Model
 {
     protected $fillable = [
         'name',
-        'cover',
-        'year',
+        'img_path',
+        'date_release',
     ];
 
     public function user(){
         return $this->belongsTo(User::class);
     }
 
-    public function track(){
+    public function tracks(){
         return $this->hasMany(Track::class);
     }
 }
