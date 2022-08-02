@@ -14,12 +14,19 @@
 Route::auth();
 Route::get('/', 'HomeController@index');
 
+Route::post('/user/profile/language', array(
+    'Middleware' => 'LanguageSwitcher',
+    'uses' => 'LanguageController@index',
+));
+
+//Route::group(['middleware'=>['LanguageSwitcher']], function(){
+//    Route::post('/user/profile/language', 'LanguageController@index');
+//});
 
 Route::group(['middleware'=>['auth']], function (){
     Route::get('/user/profile/close-account', 'User\ProfileController@delete');
     Route::resource('/user/profile', 'User\ProfileController', ['except'=>['show', 'create']]);
 });
-
 
 
 Route::group([
