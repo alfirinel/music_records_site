@@ -45,8 +45,7 @@
                     <label class="col-md-4 control-label">Album cover:</label>
                     <div class="col-md-6">
                         <div class="card">
-                            <img class="card-img-bottom" src="\{{ $album->img_path }}" alt="Card image"
-                                 style="width:100%">
+                            <img class="cover" src="\{{ $album->img_path }}" alt="Card image">
                         </div>
                     </div>
                     <div class="col-md-6">

@@ -27,8 +27,8 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $albums = Album::paginate(3);
         $user = Auth::user();
+        $albums = Auth::user()->albums;
         return view('audio.album.index', ['user' => $user], compact('albums'));
     }
 

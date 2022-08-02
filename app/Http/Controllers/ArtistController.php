@@ -16,8 +16,8 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-//        $users = User::has('albums', '>', 0)->get();
+//        $users = User::all();
+        $users = User::has('albums', '>', 0)->get();
         return view('artists.index',['users' => $users]);
     }
 
