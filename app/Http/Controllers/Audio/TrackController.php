@@ -24,7 +24,7 @@ class TrackController extends Controller
      */
     public function create()
     {
-
+        return view('audio.track.create');
     }
 
     /**
@@ -32,8 +32,9 @@ class TrackController extends Controller
      */
     public function store(Requests\TrackRequest $request)
     {
+        dd($request->file('audio'), $request->user()->albums);
         $album = Album::findOrFail($request->input('id'));
-        $this->authorize('destroy', $album);
+//        $this->authorize('destroy', $album);
               //  /album/{album}/track
     //TODO policy current has current album
         //$album->tracks()->create
@@ -42,6 +43,7 @@ class TrackController extends Controller
         $name = pathinfo($name, PATHINFO_FILENAME);
 
 
+        dd($album,$name, $path);
         $album->tracks()->create([
             'name'=> (trim($name)),
             'path'=>$path,

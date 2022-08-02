@@ -17,6 +17,9 @@
                 <li>
                     <a href="{{url('user/profile/close-account')}}"><button type="submit" class="btn btn-success">Close Account</button></a>
                 </li>
+                <li>
+                    <a href="{{ url('user/album')}}"><button type="submit" class="btn btn-success">My albums</button></a>
+                </li>
             </ul>
 
         </div>

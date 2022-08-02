@@ -100,13 +100,6 @@ class AlbumController extends Controller
         $album->img_path = $path->getPathname();
         $album->date_release = $request->date_release;
         $album->save();
-//        $album = $request->user()->albums()->update([
-//            'name'=> (trim($request['name'])),
-//            'img_path'=>$path->getPathname(),
-//            'date_release'=>$request['date_release'],
-//        ]);
-//        $album->save();
-//        dd($album);
         return redirect()->route('album.show', $album);
     }
 

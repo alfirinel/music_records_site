@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Model\Album;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $albums = \Auth::user()->albums()->orderBy('updated_at','desc')->get();
+        return view('user.album', ['albums'=>$albums]);
     }
 
     public function artists()

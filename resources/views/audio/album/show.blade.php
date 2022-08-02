@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{ route('album.create') }}">
-        <button type="submit" class="btn btn-outline-secondary">Add album</button>
-    </a>
 
     <div class="container mt-3">
         <div class="card" style="width:400px">
@@ -32,5 +29,6 @@
         </div>
     </div>
 
+    @include('audio.track.create')
     @include('audio.track.show')
 @endsection
