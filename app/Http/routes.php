@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index');
 
 Route::group(['middleware'=>['lang']], function(){
     Route::post('/user/profile/language', 'LanguageController@index');
+    Route::post('/login/language', 'LanguageController@index');
 });
 
 Route::group(['middleware'=>['auth']], function (){

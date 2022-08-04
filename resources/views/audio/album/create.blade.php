@@ -9,7 +9,7 @@
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <label for="name" class="col-md-4 control-label">Title album:</label>
+                    <label for="name" class="col-md-4 control-label">{{trans('index.title')}}:</label>
 
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control" name="name"
@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div class="form-group{{ $errors->has('date') ? ' has-error' : '' }}">
-                    <label for="date" class="col-md-4 control-label">Year issue:</label>
+                    <label for="date" class="col-md-4 control-label">{{trans('index.release_date')}}:</label>
 
                     <div class="col-md-6">
                         <input id="date" type="date" class="form-control" name="date"
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('img_cover') ? ' has-error' : '' }}">
-                    <label for="file" class="col-md-4 control-label">Album cover:</label>
+                    <label for="file" class="col-md-4 control-label">{{trans('index.cover')}}:</label>
 
                     <div class="col-md-6">
                         <input id="file" type="file" class="form-control" name="img_cover"
@@ -55,7 +55,7 @@
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-4">
                         <button class="profileButton">
-                            <i class="fa fa-btn fa-music"></i> Create
+                            <i class="fa fa-btn fa-music"></i> {{trans('index.create')}}
                         </button>
                     </div>
                 </div>

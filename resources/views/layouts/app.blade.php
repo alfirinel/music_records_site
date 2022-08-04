@@ -21,9 +21,9 @@
     <div class="nav">
         <a href="{{url('/')}}" class="logo"><img src="/images/logo.png" alt="logo" class="logo"/></a>
         <div class=nav-right">
-            <a class="active" href="{{url('/')}}">Releases</a>
-            <a href="{{ url('artists') }}">Artists</a>
-            <a href="{{ route('user.profile.index') }}">Log In</a>
+            <a class="active" href="{{url('/')}}">{{trans('index.releases')}}</a>
+            <a href="{{ url('artists') }}">{{trans('index.artists')}}</a>
+            <a href="{{ route('user.profile.index') }}">{{trans('auth.signIn')}}</a>
         </div>
     </div>
         @yield('content')
@@ -31,10 +31,10 @@
     <div class="nav">
         <a href="{{url('/')}}" class="logo"><img src="/images/logo.png" alt="logo" class="logo"/></a>
         <div class="nav-right">
-            <a class="active" href="{{url('/')}}">Releases</a>
-            <a href="{{ url('artists') }}">Artists</a>
-            <a href="{{ route('user.profile.index')}}">Personal account</a>
-            <a href="{{ url('/logout') }}">Logout</a>
+            <a class="active" href="{{url('/')}}">{{trans('index.releases')}}</a>
+            <a href="{{ url('artists') }}">{{trans('index.artists')}}</a>
+            <a href="{{ route('user.profile.index')}}">{{trans('index.personal_account')}}</a>
+            <a href="{{ url('/logout') }}">{{trans('index.logout')}}</a>
         </div>
     </div>
 @yield('content')

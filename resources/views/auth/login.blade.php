@@ -74,9 +74,9 @@
             <div class="con">
                 <!--     Start  header Content  -->
                 <header class="head-form">
-                    <h2>Log In</h2>
+                    <h2>{{trans('auth.auth')}}</h2>
                     <!--     A welcome message or an explanation of the login form -->
-                    <p>login here using your e-mail and password</p>
+
                 </header>
                 <!--     End  header Content  -->
                 <br>
@@ -92,13 +92,13 @@
 
                 <div class="field-set">
                     <!--   user name Input-->
-                    <input class="form-input" id="txt-input" type="text" placeholder="E-mail" name="email"
+                    <input class="form-input" id="txt-input" type="text" placeholder="{{trans('auth.email')}}" name="email"
                            value="{{ old('email') }}">
 
                     <br>
 
                     <!--   Password Input-->
-                    <input class="form-input" type="password" placeholder="Password" id="pwd" name="password">
+                    <input class="form-input" type="password" placeholder="{{trans('auth.passForm')}}" id="pwd" name="password">
 
                     <!--      Show/hide password  -->
                     <span>
@@ -109,9 +109,9 @@
                     <br>
                     <!--        buttons -->
                     <!--      button LogIn -->
-                    <div><a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a></div>
+                    <div><a class="btn btn-link" href="{{ url('/password/reset') }}">{{trans('auth.pass')}}</a></div>
                     <button class="log-in">
-                        <i class="fa fa-btn fa-user"></i> Log In
+                        <i class="fa fa-btn fa-user"></i> {{trans('auth.signIn')}}
                     </button>
                 </div>
                 <!--   other buttons -->
@@ -123,7 +123,7 @@
                     <!--     Sign Up button -->
                 {{--                <button class="btn submits sign-up" >Sign Up--}}
                 <!--         Sign Up font icon -->
-                    Not a member?<a class="new-account" href="{{ url('/register') }}"> Create account</a>
+                    {{trans('auth.member')}}<a class="new-account" href="{{ url('/register') }}"> {{trans('auth.createAccount')}}</a>
                     <!--      End Other the Division -->
                 </div>
                 <!--   End Conrainer  -->

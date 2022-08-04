@@ -5,46 +5,22 @@
         @endforeach
     @endif
     <div class="container">
-        <div class="edit-form">
-            <ul>
-                <li>
-                    <a href="{{route('user.profile.index')}}">
-                        <button type="submit" class="btn btn-success">Preferences</button>
-                    </a>
-                </li>
-                <li>
-                    <button type="submit" class="btn btn-success">Add an album</button>
-                </li>
-                <li>
-                    <a href="{{route('album.index')}}"><button type="submit" class="btn btn-success">My albums</button></a>
-                </li>
-                <li>
-                    <a href="{{url('user/profile/close-account')}}">
-                        <button type="submit" class="btn btn-success">Close Account</button>
-                    </a>
-                </li>
-            </ul>
-        </div>
+        @include('includes.profileMenu')
         <div class="profile">
-            <h2>Close Account</h2>
+            <h2>{{trans('index.closeAccount')}}</h2>
             <form action="{{ route('user.profile.destroy', $user->id) }}" method="POST">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <div class="con">
                     <div class="field-set">
                         <div>
-                            <p>This action is irreversible. All of your information, albums, photos will be erased
-                                entirely. This does not affect your ability to re-create a brand new account in
-                                future.</p>
+                            <p>{{trans('index.closeAccountInfo')}}</p>
                             <br>
-                            <p>
-                                Enter the words "permanently delete" to confirm you have acknowledged this and
-                                proceed
-                            </p>
+                            <p>{{trans('index.permanently_delete')}}</p>
                             <input class="profile-input" type="text" id="closeAccount" name="closeAccount">
                         </div>
 
-                        <input type="submit" id="closeButton" value="Delete Account" disabled>
+                        <input type="submit" id="closeButton" value="{{trans('index.closeAccount')}}" disabled>
                     </div>
                 </div>
             </form>
@@ -57,7 +33,7 @@
             $('#closeAccount').bind('input', function (e) {
                 var $this = $(this);
 
-                if ($this.val() == 'permanently delete') {
+                if ($this.val() == 'permanently delete' || $this.val() == 'удалить навсегда') {
                     console.log($this.val());
                     button.removeAttr('disabled');
                 } else {

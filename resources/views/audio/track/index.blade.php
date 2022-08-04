@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{ route('album.create') }}"><button type="submit"  class="btn btn-outline-secondary">Add album</button></a>
    @foreach($albums as $album)
        <div class="container mt-3">
            <div class="card" style="width:400px">

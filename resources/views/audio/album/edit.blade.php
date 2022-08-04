@@ -10,7 +10,7 @@
                 {{ method_field('PATCH') }}
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <label for="name" class="col-md-4 control-label">Title album:</label>
+                    <label for="name" class="col-md-4 control-label">{{trans('index.title')}}:</label>
 
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control" name="name"
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('date_release') ? ' has-error' : '' }}">
-                    <label for="date" class="col-md-4 control-label">Year issue:</label>
+                    <label for="date" class="col-md-4 control-label">{{trans('index.release_date')}}:</label>
 
                     <div class="col-md-6">
                         <input id="date" type="date" class="form-control" name="date_release"
@@ -42,7 +42,7 @@
 
                 <div class="form-group{{ $errors->has('img_path') ? ' has-error' : '' }}">
 
-                    <label class="col-md-4 control-label">Album cover:</label>
+                    <label class="col-md-4 control-label">{{trans('index.cover')}}:</label>
                     <div class="col-md-6">
                         <div class="card">
                             <img class="cover" src="\{{ $album->img_path }}" alt="Card image">
@@ -70,7 +70,7 @@
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-4">
                         <button class="profileButton">
-                            <i class="fa fa-btn fa-music"></i> Update
+                            <i class="fa fa-btn fa-music"></i> {{trans('index.update')}}
                         </button>
                     </div>
                 </div>
