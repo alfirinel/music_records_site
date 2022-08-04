@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">
+                            <button  class="profileButton">
                                 <i class="fa fa-btn fa-music"></i> Update
                             </button>
                         </div>

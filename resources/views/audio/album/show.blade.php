@@ -13,14 +13,14 @@
                         <form action="{{ route('album.edit', $album) }}" method="post">
                             {{ csrf_field() }}
                             {{ method_field('GET') }}
-                            <button type="submit">
+                            <button class="profileButton">
                                 <i class="fa fa-btn fa-edit"></i>Edit
                             </button>
                         </form>
                         <form action="{{ route('album.destroy', $album) }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <button type="submit">
+                            <button class="profileButton">
                                 <i class="fa fa-btn fa-trash"></i>Delete
                             </button>
                         </form>
@@ -31,7 +31,6 @@
                       enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <input type="hidden" name="id" value="{{ $album->id }}">
-
                     <div class="form-group{{ $errors->has('audio') ? ' has-error' : '' }}">
                         <label for="file" class="col-md-4 control-label">Select a music track:</label>
 
@@ -50,7 +49,7 @@
                     <div class="modal-footer">
                         <div class="form-group">
                             <div class="col-md-6">
-                                <button type="submit" class="btn btn-primary">
+                                <button class="profileButton">
                                     <i class="fa fa-btn fa-music"></i> Add track
                                 </button>
                             </div>

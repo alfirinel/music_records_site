@@ -76,7 +76,7 @@ class TrackController extends Controller
 //        dd($track->name,$request->name);
         $track->name = $request->name;
         $track->save();
-        return redirect()->route('album.show', $track);
+        return redirect()->route('album.show', $track->album->id);
     }
 
     /**

@@ -4,7 +4,7 @@
     <div class="overlay">
         <div class="artists-con">
             @if (!$users->img_path == 0)
-            <img src='/images/profilePhoto/{{$users->img_path}}' class="profilePhoto"/>
+                <img src='/images/profilePhoto/{{$users->img_path}}' class="artistPhoto"/>
             @endif
             <div class="con">
                 <h2>{{ $users->first_name }} {{ $users->last_name }}</h2>
@@ -30,6 +30,15 @@
                 </div>
             </div>
             <p>{{$users->profile}}</p>
+            <div>
+                @foreach($albums as $album)
+                    <div>
+                        <img class="cover" src="/{{ $album->img_path }}" alt="cover">
+                        <h4 class="card-title">{{ $album->name }}</h4>
+                        <p class="card-text">{{ $album->date_release }}</p>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection

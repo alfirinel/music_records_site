@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Album;
 use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 class ArtistController extends Controller
 {
@@ -27,9 +29,10 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($artists)
+    public function show(User $artists)
     {
-        $users = User::find($artists);
-        return view('artists.artist', ['users' => $users])->with('user', $artists);
+        //$artists пользователь для которого отображается страница(исполнитель)
+        $albums = $artists->albums;
+        return view('artists.artist', ['users' => $artists, 'albums' => $albums]);//ключ users сменить artist
     }
 }
