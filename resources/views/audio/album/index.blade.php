@@ -18,7 +18,7 @@
                     <tr>
                         <td><img class="cover" src="{{ $album->img_path }}" alt="cover"></td>
                         <td><h4>{{ $album->name }}</h4></td>
-                        <td><p>{{ $album->date_release }}</p></td>
+                        <td><p>{{ $album->getDateRelease() }}</p></td>
                         <td><a href="{{ route('album.show', $album) }}" class="btn btn-primary">See album</a></td>
                     </tr>
                 @endforeach

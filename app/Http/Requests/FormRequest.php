@@ -24,9 +24,9 @@ class FormRequest extends Request
     public function rules()
     {
         return [
-            "name" => "string|required|max:50",
+            "name" => "string|required|max:80",
             "date" => "string|date|required",
-            "img_cover" => 'required|image|max:20000',
+            "img_path" => 'required|image|max:20000',
 
         ];
     }

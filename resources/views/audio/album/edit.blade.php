@@ -33,8 +33,8 @@
 
                         @if ($errors->has('date_release'))
                             <span class="help-block">
-                                        <strong>{{ $errors->first('date_release') }}</strong>
-                                    </span>
+                                <strong>{{ $errors->first('date_release') }}</strong>
+                            </span>
                         @endif
                     </div>
                 </div>
@@ -48,9 +48,6 @@
                             <img class="cover" src="\{{ $album->img_path }}" alt="Card image">
                         </div>
                     </div>
-                    <div class="col-md-6">
-
-                    </div>
                 </div>
 
                 <div class="form-group{{ $errors->has('img_path') ? ' has-error' : '' }}">
@@ -61,8 +58,8 @@
 
                         @if ($errors->has('img_path'))
                             <span class="help-block">
-                                        <strong>{{ $errors->first('img_path') }}</strong>
-                                    </span>
+                                <strong>{{ $errors->first('img_path') }}</strong>
+                            </span>
                         @endif
                     </div>
                 </div>
@@ -73,10 +70,15 @@
                             <i class="fa fa-btn fa-music"></i> Update
                         </button>
                     </div>
+                    <div>
+                        <button type="button" class="btn btn-default"><a href="{{ url()->previous() }}">Cancel</a>
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 
 @endsection
+
 
