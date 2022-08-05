@@ -3,33 +3,33 @@
 @section('content')
     <div class="overlay">
         <div class="artists-con">
-            @if (!$users->img_path == 0)
-                <img src='/images/profilePhoto/{{$users->img_path}}' class="artistPhoto"/>
+            @if (!$artist->img_path == 0)
+                <img src='/images/profilePhoto/{{$artist->img_path}}' class="artistPhoto"/>
             @endif
             <div class="con">
-                <h2>{{ $users->first_name }} {{ $users->last_name }}</h2>
+                <h2>{{ $artist->first_name }} {{ $artist->last_name }}</h2>
                 <div>
-                    @if (!$users->website == 0)
-                        <a href="{{$users->website}}">Website</a>
+                    @if (!$artist->website == 0)
+                        <a href="{{$artist->website}}">Website</a>
                     @endif
-                    @if (!$users->twitter == 0)
-                        <a href=" {{$users->twitter}}">
+                    @if (!$artist->twitter == 0)
+                        <a href=" {{$artist->twitter}}">
                             <i class="fa fa-twitter"></i>
                         </a>
                     @endif
-                    @if (!$users->instagram == 0)
-                        <a href=" {{$users->instagram}}">
+                    @if (!$artist->instagram == 0)
+                        <a href=" {{$artist->instagram}}">
                             <i class="fa fa-instagram"></i>
                         </a>
                     @endif
-                    @if (!$users->facebook == 0)
-                        <a href=" {{$users->facebook}}">
+                    @if (!$artist->facebook == 0)
+                        <a href=" {{$artist->facebook}}">
                             <i class="fa fa-facebook-square"></i>
                         </a>
                     @endif
                 </div>
             </div>
-            <p>{{$users->profile}}</p>
+            <p>{{$artist->profile}}</p>
             <div>
                 @foreach($albums as $album)
                     <div>
@@ -38,6 +38,7 @@
                         <p class="card-text">{{ $album->date_release }}</p>
                     </div>
                 @endforeach
+
             </div>
         </div>
     </div>

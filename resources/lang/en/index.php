@@ -1,5 +1,7 @@
 <?php
 return [
+    //img
+    'sampleImg' => url('/images/lang/English.png'),
     //user menu
     'preferences' => 'Preferences',
     'album' => 'Add an album',

@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <title>Laravel</title>
 </head>
-<form action="{{url('/user/profile/language')}}" method="post">
+<form class='lang' action="{{url('/user/profile/language')}}" method="post">
     <select name="locale">
         <option value="en">English</option>
         <option value="ru">Русский</option>

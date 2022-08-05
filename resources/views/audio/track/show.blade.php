@@ -16,7 +16,7 @@
                             <tr>
                                 <!-- Имя задачи -->
                                 <td class="table-text">
-                                    <div style="width: 190px">{{ $track->name}}</div>
+                                    <div>{{ $track->name}}</div>
                                 </td>
 
                                 <td>

@@ -32,6 +32,10 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $image = $request->file('file')->getClientOriginalName();
 
         $filename = time().$image;

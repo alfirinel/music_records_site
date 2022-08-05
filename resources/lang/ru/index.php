@@ -1,5 +1,7 @@
 <?php
 return[
+    //img
+    'sampleImg' => url('/images/lang/russia.png'),
     //user menu
     'preferences' => 'Настройки',
     'album' => 'Добавить альбом',
