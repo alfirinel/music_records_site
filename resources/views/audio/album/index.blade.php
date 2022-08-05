@@ -7,10 +7,10 @@
             <table class="album">
                 <thead>
                 <tr>
-                    <th>Cover</th>
-                    <th>Name</th>
-                    <th>Release date</th>
-                    <th>Action</th>
+                    <th>{{trans('index.cover')}}</th>
+                    <th>{{trans('index.name_album')}}</th>
+                    <th>{{trans('index.release_date')}}</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -19,7 +19,7 @@
                         <td><img class="cover" src="{{ $album->img_path }}" alt="cover"></td>
                         <td><h4>{{ $album->name }}</h4></td>
                         <td><p>{{ $album->getDateRelease() }}</p></td>
-                        <td><a href="{{ route('album.show', $album) }}" class="btn btn-primary">See album</a></td>
+                        <td><a href="{{ route('album.show', $album) }}" class="btn btn-primary">{{trans('index.see_album')}}</a></td>
                     </tr>
                 @endforeach
                 </tbody>

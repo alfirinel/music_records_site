@@ -413,3 +413,11 @@ div.gallery:hover {
     flex-direction: row-reverse;
 }
 
+.table-con{
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-text{
+    width: 400px;
+}

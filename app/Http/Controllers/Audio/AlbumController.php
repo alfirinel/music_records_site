@@ -28,8 +28,9 @@ class AlbumController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $albums = \Auth::user()->albums()->orderBy('updated_at','desc')->get();
-        return view('user.album', ['albums'=>$albums]);
+        return view('audio.album.index', ['user' => $user], compact('albums'));
 //        $user = Auth::user();
 //        $albums = Auth::user()->albums;
 //        return view('audio.album.index', ['user' => $user], compact('albums'));
@@ -54,28 +55,13 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            "name" => "string|required|max:80",
-            "date" => "string|date|required",
-            "img_path" => 'required|image|max:20000',
-        ]);
-
-//        dd($validator->errors());
-        if ($validator->errors()) {
-            return redirect()->route('album.create',[
-                'errors'=>$validator->errors(),
-            ]);
-//                ->withErrors($validator->errors())
-//                ->withInput();
-        }
-
-//        if(!$request->hasFile('img_path')){
-//            return redirect()->route('album.create');
-//        };
+        if(!$request->hasFile('img_path')){
+            return redirect()->route('album.create');
+        };
 
         $name = $request->file('img_path')->getClientOriginalName();
         $path = $request->file('img_path')
-                ->move("images\cover\\".date('Y-m-d'), $name);
+            ->move("images\cover\\".date('Y-m-d'), $name);
 
         $album = $request->user()->albums()->create([
             'name'=> (trim(strtolower($request['name']))),
