@@ -1,4 +1,4 @@
-body{
+body {
     font-family: Trebuchet MS, sans-serif;
 }
 
@@ -30,16 +30,16 @@ body{
         display: block;
         text-align: left;
     }
+
     .nav-right {
         float: none;
     }
 }
 
 
-.logo{
+.logo {
     height: 150px;
 }
-
 
 
 /* Start Global rules */
@@ -48,6 +48,7 @@ body{
     margin: 0;
     box-sizing: border-box;
 }
+
 /* End Global rules */
 
 /* Start body rules */
@@ -65,11 +66,8 @@ body {
 }
 
 
-
 /* |||||||||||||||||||||||||||||||||||||||||||||*/
 /* //////////////////////////////////////////// */
-
-
 
 
 /* End body rules */
@@ -85,6 +83,7 @@ body {
     padding: 2%;
     background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
 }
+
 /* form Container */
 .auth-form .con {
     display: -webkit-flex;
@@ -104,15 +103,18 @@ header {
     margin: 2% auto 10% auto;
     text-align: center;
 }
+
 /* Login title form form */
 header h2 {
     font-size: 250%;
     font-family: 'Playfair Display', serif;
     color: #3e403f;
 }
-/*  A welcome message or an explanation of the login form */
-header p {letter-spacing: 0.05em;}
 
+/*  A welcome message or an explanation of the login form */
+header p {
+    letter-spacing: 0.05em;
+}
 
 
 /* //////////////////////////////////////////// */
@@ -125,7 +127,6 @@ header p {letter-spacing: 0.05em;}
     padding: 14.5px 0px 15px 9px;
     border-radius: 5px 0px 0px 5px;
 }
-
 
 
 /* Show/hide password Font Icon */
@@ -146,8 +147,9 @@ header p {letter-spacing: 0.05em;}
 
     cursor: pointer;
 }
+
 /* inputs form  */
-input[class="form-input"]{
+input[class="form-input"] {
     width: 280px;
     height: 50px;
 
@@ -165,7 +167,11 @@ input[class="form-input"]{
     transition: 0.2s linear;
 
 }
-input[id="txt-input"] {width: 280px;}
+
+input[id="txt-input"] {
+    width: 280px;
+}
+
 /* focus  */
 input:focus {
     transform: translateX(-2px);
@@ -181,7 +187,7 @@ button {
     display: inline-block;
     color: #252537;
 
-    width: 150px;
+    width: 280px;
     height: 50px;
 
     padding: 0 20px;
@@ -198,6 +204,7 @@ button {
     margin: 5px auto;
     letter-spacing: 0.05em;
 }
+
 /* Submits */
 .submits {
     width: 48%;
@@ -207,10 +214,14 @@ button {
 }
 
 /*       Forgot Password button FAF3DD  */
-.frgt-pass {background: transparent;}
+.frgt-pass {
+    background: transparent;
+}
 
 /*     Sign Up button  */
-.sign-up {background: #B8F2E6;}
+.sign-up {
+    background: #B8F2E6;
+}
 
 
 /* buttons hover */
@@ -223,6 +234,7 @@ button:hover {
 button:hover {
     animation: ani9 0.4s ease-in-out infinite alternate;
 }
+
 @keyframes ani9 {
     0% {
         transform: translateY(3px);
@@ -232,13 +244,13 @@ button:hover {
     }
 }
 
-.container{
+.container {
     display: flex;
     justify-content: space-evenly;
     padding: 100px;
 }
 
-.edit-form{
+.edit-form {
     width: 470px;
     min-height: 500px;
     height: auto;
@@ -246,19 +258,20 @@ button:hover {
     padding: 2%;
     background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
 }
-.edit-form li{
+
+.edit-form li {
     list-style-type: none;
     padding: 30px;
 }
 
-.profile{
+.profile {
     padding: 50px;
     background-color: #ffffff;
     width: 80%;
     height: auto;
 }
 
-textarea{
+textarea {
     height: 200px;
     width: 50%;
     border-radius: 4px;
@@ -271,13 +284,13 @@ textarea{
     color: #5E6472;
 }
 
-.field-set div{
+.field-set div {
     display: flex;
     flex-direction: column;
     padding: 10px 0 10px 0;
 }
 
-input[class="profile-input"]{
+input[class="profile-input"] {
     width: 500px;
     height: 50px;
     margin-top: 5px;
@@ -293,7 +306,7 @@ input[class="profile-input"]{
 }
 
 
-.artists-con{
+.artists-con {
     width: 50%;
     min-height: 500px;
     height: auto;
@@ -303,6 +316,7 @@ input[class="profile-input"]{
     padding: 2%;
     background-color: #ffffff;
 }
+
 /* form Container */
 .artists-con .con {
     display: -webkit-flex;
@@ -317,34 +331,85 @@ input[class="profile-input"]{
     margin: 0 auto;
 }
 
-a{
+a {
     color: #252537;
     text-decoration: none;
 }
 
-.profilePhoto{
-    width: 500px;
+.artistPhoto {
+    width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 450px;
+    border: 1px #ffffff solid;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
-.album{
+.profilePhoto {
+    width: 200px;
+    display: block;
+    border-radius: 100px;
+}
+
+.album {
     margin: auto;
     width: 75%;
 }
 
-td{
+td {
     border-bottom: 1px #000000 dashed;
     border-top: 1px #000000 dashed;
     padding: 5px;
 }
 
-.cover{
-   width: 300px;
+.cover {
+    width: 300px;
+    height: 300px;
 }
 
-.album-con{
+.album-con {
     display: flex;
     justify-content: center;
 }
+
+.profileButton {
+    display: inline-block;
+    color: #252537;
+
+    width: 280px;
+    height: 50px;
+
+    padding: 0 20px;
+    background: #E3FDF5FF;
+    border-radius: 5px;
+
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+
+    margin: 5px auto;
+    letter-spacing: 0.05em;
+}
+
+
+div.gallery {
+    padding: 9px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    float: left;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+.lang{
+    display: flex;
+    flex-direction: row-reverse;
+}
+

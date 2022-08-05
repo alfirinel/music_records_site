@@ -23,15 +23,6 @@ class ProfileController extends Controller
         return view('user.index', ['user' => $user]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -41,6 +32,10 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $image = $request->file('file')->getClientOriginalName();
 
         $filename = time().$image;
@@ -55,16 +50,6 @@ class ProfileController extends Controller
         return redirect(route('user.profile.index'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -121,10 +106,5 @@ class ProfileController extends Controller
     {
         $users = User::all();
         return view('user.delete', ['users' => $users]);
-    }
-
-    public function imageUpload(Request $request)
-    {
-
     }
 }
