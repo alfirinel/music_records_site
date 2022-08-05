@@ -25,7 +25,8 @@
                             </button>
                         </form>
                     </div>
-                </div>@include('audio.track.show')
+                </div>
+                @include('audio.track.show')
                 <form class="form-horizontal" role="form" method="POST" action="{{ route('track.store') }}"
                       enctype="multipart/form-data">
                     {{ csrf_field() }}

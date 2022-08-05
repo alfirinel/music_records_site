@@ -50,11 +50,11 @@ class AlbumController extends Controller
      * @param Requests\FormRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\FormRequest $request)
     {
         if(!$request->hasFile('img_path')){
             return redirect()->route('album.create');
-        };
+        }
 
         $name = $request->file('img_path')->getClientOriginalName();
         $path = $request->file('img_path')

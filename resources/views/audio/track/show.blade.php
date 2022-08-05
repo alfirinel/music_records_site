@@ -10,39 +10,39 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach ($tracks as $track)
-                                <tr>
-                                    <td>
-                                        <div class="table-text">{{ $track->name}}</div>
-                                    </td>
-                                    <td>
-                                        <audio controls muted>
-                                            <source src="\{{ $track->path }}" type="audio/mpeg">
-                                        </audio>
-                                    </td>
+                        @foreach ($tracks as $track)
+                            <tr>
+                                <td>
+                                    <div class="table-text">{{ $track->name}}</div>
+                                </td>
+                                <td>
+                                    <audio controls muted>
+                                        <source src="\{{ $track->path }}" type="audio/mpeg">
+                                    </audio>
+                                </td>
 
-                                    <td>
-                                        <form action="{{ route('track.edit', $track->id) }}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('GET') }}
-
-
-                                                <i class="fa fa-btn fa-edit"></i>Edit
-
-                                        </form>
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('track.destroy', $track->id) }}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
+                                <td>
+                                    <form action="{{ route('track.edit', $track->id) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('GET') }}
 
 
-                                                <i class="fa fa-btn fa-trash"></i>Удалить
+                                        <i class="fa fa-btn fa-edit"></i>Edit
 
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="{{ route('track.destroy', $track->id) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+
+
+                                        <i class="fa fa-btn fa-trash"></i>Удалить
+
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

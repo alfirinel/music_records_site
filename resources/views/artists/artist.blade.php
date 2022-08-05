@@ -32,12 +32,22 @@
             <p>{{$artist->profile}}</p>
             <div>
                 @foreach($albums as $album)
-                    <div>
-                        <img class="cover" src="/{{ $album->img_path }}" alt="cover">
-                        <h4 class="card-title">{{ $album->name }}</h4>
-                        <p class="card-text">{{ $album->date_release }}</p>
-                    </div>
-                @endforeach
+
+                        <div>
+                            <img class="cover" src="/{{ $album->img_path }}" alt="cover">
+                            <h4 class="card-title">{{ $album->name }}</h4>
+                            <p class="card-text">{{ $album->date_release }}</p>
+                            @foreach($album->tracks as $track)
+                            <div>
+                                <p>{{ $track->name }}</p>
+                                <audio controls muted>
+                                    <source src="\{{ $track->path }}" type="audio/mpeg">
+                                </audio>
+                            </div>
+                            @endforeach
+                        </div>
+                    @endforeach
+
 
             </div>
         </div>

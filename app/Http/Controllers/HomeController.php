@@ -21,6 +21,11 @@ class HomeController extends Controller
         return view('home', ['albums' => $albums],['users' => $users]);
     }
 
+    /**
+     * Show the artists dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function artists()
     {
         $users = User::all();

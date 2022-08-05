@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Track;
 use App\User;
 
 class ArtistController extends Controller
@@ -26,7 +27,6 @@ class ArtistController extends Controller
     public function show(User $artists)
     {
         $albums = $artists->albums;
-
-        return view('artists.artist', ['artist' => $artists, 'albums' => $albums,]);
+        return view('artists.artist', ['artist' => $artists, 'albums' => $albums]);
     }
 }
