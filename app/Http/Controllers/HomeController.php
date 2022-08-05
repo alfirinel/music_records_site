@@ -10,16 +10,6 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
-
-    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
@@ -35,11 +25,6 @@ class HomeController extends Controller
     {
         $users = User::all();
         return view('artists.artists',['users' => $users]);
-    }
-
-    public function news()
-    {
-        return view('news');
     }
 
 }

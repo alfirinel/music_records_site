@@ -18,15 +18,6 @@ class TrackController extends Controller
     {
         $this->middleware('auth');
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
 
     /**
      * @param Requests\TrackRequest $request
@@ -72,8 +63,6 @@ class TrackController extends Controller
         $this->validate($request, [
             'name' => 'required|max:255',
         ]);
-
-//        dd($track->name,$request->name);
         $track->name = $request->name;
         $track->save();
         return redirect()->route('album.show', $track->album->id);

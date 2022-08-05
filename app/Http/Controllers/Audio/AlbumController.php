@@ -31,9 +31,6 @@ class AlbumController extends Controller
         $user = Auth::user();
         $albums = \Auth::user()->albums()->orderBy('updated_at','desc')->get();
         return view('audio.album.index', ['user' => $user], compact('albums'));
-//        $user = Auth::user();
-//        $albums = Auth::user()->albums;
-//        return view('audio.album.index', ['user' => $user], compact('albums'));
     }
 
     /**
@@ -120,15 +117,8 @@ class AlbumController extends Controller
 
         $album->name = $request->name;
         $album->date_release = $request->date_release;
-//        dd($request->all(), $album);
         $album->save();
         return redirect()->route('album.show', $album);
-
-//        dd($request->file(), $album);
-//        $user = Auth::user();
-//        $data = $request->all();
-//        $album->update($data);
-//        return redirect()->route('album.index', ['user' => $user], $album);
     }
 
     /**
